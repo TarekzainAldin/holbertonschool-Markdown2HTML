@@ -8,19 +8,23 @@ Usage:
 """
 import sys
 import os
-# Check if the correct number of arguments is provided
-if len(sys.argv) < 3:
-    sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
-    sys.exit(1)
-
-# Get the input and output file names from the arguments
-markdown_file = sys.argv[1]
-output_file = sys.argv[2]
-
-# Check if the Markdown file exists
-if not os.path.exists(markdown_file):
-    sys.stderr.write(f"Missing {markdown_file}\n")
-    sys.exit(1)
-
-# If everything is okay, exit with no output
-sys.exit(0)
+def main():
+    """
+    Main entry point of the script.
+    """
+    # Check the number of arguments
+    if len(sys.argv) < 3:
+        print("Usage: ./markdown2html.py README.md README.html",
+              file=sys.stderr)
+        sys.exit(1)
+    # Assign arguments
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    # Check if the input file exists
+    if not os.path.exists(input_file):
+        print(f"Missing {input_file}", file=sys.stderr)
+        sys.exit(1)
+    # Exit successfully without doing anything else
+    sys.exit(0)
+if __name__ == "__main__":
+    main()
