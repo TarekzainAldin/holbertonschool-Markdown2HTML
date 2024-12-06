@@ -8,7 +8,10 @@ Usage:
 """
 import sys
 import os
+
+
 def main():
+
     """
     Main entry point of the script.
     """
@@ -26,5 +29,7 @@ def main():
         sys.exit(1)
     # Exit successfully without doing anything else
     sys.exit(0)
+
+
 if __name__ == "__main__":
     main()
